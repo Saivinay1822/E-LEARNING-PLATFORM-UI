@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Course Detail</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>Course: JavaScript for Beginners</h1>
+    <nav>
+      <a href="index.html">Courses</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="video-section">
+      <h2>Lesson 1: Introduction</h2>
+      <video controls width="600">
+        <source src="intro.mp4" type="video/mp4" />
+        Your browser does not support HTML5 video.
+      </video>
+    </section>
+
+    <section class="progress">
+      <label for="progress">Your Progress:</label>
+      <progress id="progress" value="20" max="100"></progress>
+    </section>
+  </main>
+
+  <script>
+    // Simulate progress tracking
+    document.querySelector('video').addEventListener('ended', () => {
+      let progress = document.getElementById('progress');
+      progress.value = Math.min(100, progress.value + 20);
+      alert('Lesson completed! Progress updated.');
+    });
+  </script>
+</body>
+</html>
